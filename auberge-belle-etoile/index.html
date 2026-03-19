@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Auberge de La Belle Étoile | Restaurant Français – Mesgrigny</title>
+  <meta name="description" content="Auberge de La Belle Étoile – Restaurant français authentique à Mesgrigny. Cuisine généreuse, accueil chaleureux, menu à partir de €15. Ouvert lun–sam 6h–22h."/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="restaurant"/>
+  <meta property="og:title" content="Auberge de La Belle Étoile | Restaurant Français – Mesgrigny"/>
+  <meta property="og:description" content="Cuisine française authentique à Mesgrigny. Portions généreuses, ambiance chaleureuse. Menu à partir de €15."/>
+  <meta property="og:image" content="images/food-starter.jpg"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Auberge de La Belle Étoile","address":{"@type":"PostalAddress","streetAddress":"10 La Belle Étoile","addressLocality":"Mesgrigny","postalCode":"10170","addressCountry":"FR"},"telephone":"+33625744271","priceRange":"€€","servesCuisine":"French","openingHours":["Mo-Sa 06:00-22:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"3.9","reviewCount":"292"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="canonical" href="https://auberge-belle-etoile.fr"/>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-box">
+    <div class="loader-star">★</div>
+    <p class="loader-name">Auberge de La Belle Étoile</p>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image agrandie">
+  <button class="lb-close" id="lbClose" aria-label="Fermer">✕</button>
+  <img id="lbImg" src="" alt=""/>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+  <div class="nav-in">
+    <a href="#hero" class="nav-logo" aria-label="Accueil">
+      <span class="nav-logo-star">★</span>
+      <span class="nav-logo-txt">Belle Étoile</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about" class="nav-link">À Propos</a></li>
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#gallery" class="nav-link">Galerie</a></li>
+      <li><a href="#reviews" class="nav-link">Avis</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="tel:+33625744271" class="nav-cta">Réserver</a>
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mob" id="navMob" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#about">À Propos</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Galerie</a></li>
+      <li><a href="#reviews">Avis</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:+33625744271" class="mob-cta">📞 +33 6 25 74 42 71</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero" id="hero" aria-labelledby="heroTitle">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="star-field" id="starField" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge-pill" id="heroPill">
+      <span class="pill-dot"></span>
+      Restaurant Français Authentique · Mesgrigny
+    </div>
+
+    <h1 class="hero-title" id="heroTitle">
+      <span class="hero-line" id="hl1"><span>Auberge de</span></span>
+      <span class="hero-line em" id="hl2"><span>La Belle Étoile</span></span>
+    </h1>
+
+    <p class="hero-sub" id="heroSub">
+      Une cuisine généreuse, façonnée avec passion au cœur de la Champagne.<br>
+      <em>Mesgrigny, France · Menu dès €15 · Ouvert lun–sam</em>
+    </p>
+
+    <div class="hero-acts" id="heroActs">
+      <a href="#menu" class="btn btn-primary" id="heroMenuBtn">
+        <span>Voir le Menu</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost"><span>Nous Trouver</span></a>
+    </div>
+
+    <div class="hero-stats" id="heroStats">
+      <div class="hstat">
+        <strong>292</strong><span>Avis Google</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <strong>3.9 ★</strong><span>Note Moyenne</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <strong>€15–30</strong><span>Menu Complet</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-label="Défiler">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <div class="scroll-line"></div>
+    <span>Défiler</span>
+  </div>
+</section>
+
+<!-- ======================== ABOUT ======================== -->
+<section class="about section" id="about" aria-labelledby="aboutTitle">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="line-reveal" id="lineReveal"></div>
+        <span class="eyebrow" data-anim="up">Notre Histoire</span>
+        <h2 class="sec-title" data-anim="up" id="aboutTitle">Une auberge au cœur<br>de la <em>Champagne</em></h2>
+        <p class="about-desc" data-anim="up" style="--d:.1s">
+          Nichée dans le village pittoresque de Mesgrigny, l'Auberge de La Belle Étoile est bien plus qu'un restaurant — c'est un lieu de convivialité, de partage et de saveurs authentiques. Sous la direction de nouveaux propriétaires passionnés depuis décembre 2024, l'auberge rayonne d'un élan nouveau.
+        </p>
+        <p class="about-desc" data-anim="up" style="--d:.2s">
+          Chaque assiette est pensée avec générosité : des portions copieuses, des produits frais et une cuisine française qui réchauffe les cœurs. Camionneurs, voyageurs, locaux — tous sont les bienvenus à notre grande table.
+        </p>
+        <div class="about-feats" data-anim="up" style="--d:.3s">
+          <div class="feat-item"><span class="feat-icon">🍽️</span><div><strong>4–5 plats proposés</strong><span>Choix varié chaque jour</span></div></div>
+          <div class="feat-item"><span class="feat-icon">🚛</span><div><strong>Grand parking gratuit</strong><span>Poids lourds bienvenus</span></div></div>
+          <div class="feat-item"><span class="feat-icon">🌟</span><div><strong>Accueil chaleureux</strong><span>Ambiance familiale</span></div></div>
+        </div>
+      </div>
+      <div class="about-vis" data-anim="right">
+        <div class="img-stack">
+          <figure class="img-main">
+            <img src="images/food-fish.jpg" alt="Dos de cabillaud avec pommes de terre et sauce" loading="lazy" width="500" height="400"/>
+          </figure>
+          <div class="img-sm">
+            <img src="images/food-beer.jpg" alt="Kronenbourg 1947 à la pression" loading="lazy" width="240" height="300"/>
+          </div>
+          <div class="img-tag" data-anim="scale">★ Nouveaux propriétaires · Déc 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== STATS ======================== -->
+<section class="stats sec-sm" aria-label="Chiffres clés">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card" data-anim="up" data-delay="0">
+        <div class="stat-num" id="cnt1" data-count="292">0</div>
+        <div class="stat-lbl">Avis vérifiés</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="--bar-w:88%"></div></div>
+      </div>
+      <div class="stat-card" data-anim="up" data-delay="100">
+        <div class="stat-num">3.9<sup>★</sup></div>
+        <div class="stat-lbl">Note Google</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="--bar-w:78%"></div></div>
+      </div>
+      <div class="stat-card" data-anim="up" data-delay="200">
+        <div class="stat-num">15<sup>€</sup></div>
+        <div class="stat-lbl">Menu entrée + plat</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="--bar-w:60%"></div></div>
+      </div>
+      <div class="stat-card" data-anim="up" data-delay="300">
+        <div class="stat-num">6<sup>j/7</sup></div>
+        <div class="stat-lbl">Ouvert lun–sam</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="--bar-w:100%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== MENU ======================== -->
+<section class="menu section" id="menu" aria-labelledby="menuTitle">
+  <div class="menu-watermark" aria-hidden="true">MENU</div>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" data-anim="up">Notre Carte</span>
+      <h2 class="sec-title" data-anim="up" id="menuTitle">Des saveurs <em>généreuses</em></h2>
+      <p class="sec-sub" data-anim="up">Cuisine française maison. Fraîcheur et générosité à chaque assiette.</p>
+    </div>
+    <div class="menu-tabs" data-anim="up" role="tablist" aria-label="Catégories du menu">
+      <button class="tab-btn on" role="tab" aria-selected="true"  aria-controls="pEntrees"  id="tEntrees"  data-tab="Entrees">Entrées</button>
+      <button class="tab-btn"    role="tab" aria-selected="false" aria-controls="pPlats"    id="tPlats"    data-tab="Plats">Plats</button>
+      <button class="tab-btn"    role="tab" aria-selected="false" aria-controls="pDesserts" id="tDesserts" data-tab="Desserts">Desserts</button>
+      <button class="tab-btn"    role="tab" aria-selected="false" aria-controls="pBoissons" id="tBoissons" data-tab="Boissons">Boissons</button>
+    </div>
+
+    <!-- Entrées -->
+    <div class="tab-panel on" id="pEntrees" role="tabpanel" aria-labelledby="tEntrees">
+      <div class="menu-grid">
+        <article class="mcard" data-anim="up" data-delay="0">
+          <div class="mcard-img"><img src="images/food-starter.jpg" alt="Charcuterie et cornichons maison" loading="lazy" width="400" height="280"/><span class="badge-pill">Maison</span></div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Assiette Charcutière</h3><span class="mcard-price">€8</span></div>
+            <p class="mcard-desc">Saucissons maison, cornichons, choucroute et pain frais – un régal du terroir.</p>
+            <div class="tag-row"><span class="ctag">Maison</span><span class="ctag">Terroir</span></div>
+          </div>
+        </article>
+        <article class="mcard" data-anim="up" data-delay="100">
+          <div class="ph-img">🥗</div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Salade Paysanne</h3><span class="mcard-price">€7</span></div>
+            <p class="mcard-desc">Lardons, œuf, croutons dorés et vinaigrette maison sur jeunes pousses.</p>
+            <div class="tag-row"><span class="ctag">Végétarien opt.</span></div>
+          </div>
+        </article>
+        <article class="mcard" data-anim="up" data-delay="200">
+          <div class="ph-img">🍲</div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Soupe à l'Oignon</h3><span class="mcard-price">€7.50</span></div>
+            <p class="mcard-desc">Gratinée au fromage, mijotée longuement pour une saveur profonde et réconfortante.</p>
+            <div class="tag-row"><span class="ctag">Classique</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Plats -->
+    <div class="tab-panel" id="pPlats" role="tabpanel" aria-labelledby="tPlats">
+      <div class="menu-grid">
+        <article class="mcard" data-anim="up" data-delay="0">
+          <div class="mcard-img"><img src="images/food-beef.jpg" alt="Entrecôte aux oignons avec frites" loading="lazy" width="400" height="280"/><span class="badge-pill">Signature</span></div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Entrecôte Sauce Oignon</h3><span class="mcard-price">€18</span></div>
+            <p class="mcard-desc">Bœuf fondant mijoté aux oignons caramélisés, servi avec frites dorées croustillantes.</p>
+            <div class="tag-row"><span class="ctag hi">Coup de ♥</span><span class="ctag">Frites incluses</span></div>
+          </div>
+        </article>
+        <article class="mcard" data-anim="up" data-delay="100">
+          <div class="mcard-img"><img src="images/food-fish.jpg" alt="Dos de cabillaud fondue de poireaux" loading="lazy" width="400" height="280"/><span class="badge-pill">Frais du jour</span></div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Dos de Cabillaud</h3><span class="mcard-price">€17</span></div>
+            <p class="mcard-desc">Fondue de poireaux, pommes de terre fondantes et sauce légère – un régal.</p>
+            <div class="tag-row"><span class="ctag">Poisson frais</span><span class="ctag">Champagne</span></div>
+          </div>
+        </article>
+        <article class="mcard" data-anim="up" data-delay="200">
+          <div class="ph-img">🍖</div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Bœuf Mijoté Maison</h3><span class="mcard-price">€16</span></div>
+            <p class="mcard-desc">Bœuf à l'étouffée, légumes du marché, fond de veau et herbes aromatiques.</p>
+            <div class="tag-row"><span class="ctag">Fait maison</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="tab-panel" id="pDesserts" role="tabpanel" aria-labelledby="tDesserts">
+      <div class="menu-grid">
+        <article class="mcard" data-anim="up" data-delay="0">
+          <div class="ph-img">🍮</div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Crème Caramel</h3><span class="mcard-price">€5.50</span></div>
+            <p class="mcard-desc">Crème veloutée nappée d'un caramel maison ambré, servie bien fraîche.</p>
+            <div class="tag-row"><span class="ctag">Maison</span><span class="ctag">Classique</span></div>
+          </div>
+        </article>
+        <article class="mcard" data-anim="up" data-delay="100">
+          <div class="ph-img">🍰</div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Tarte du Jour</h3><span class="mcard-price">€5</span></div>
+            <p class="mcard-desc">Selon la saison – aux pommes, poires ou fruits rouges. Toujours maison.</p>
+            <div class="tag-row"><span class="ctag">Saisonnier</span></div>
+          </div>
+        </article>
+        <article class="mcard" data-anim="up" data-delay="200">
+          <div class="ph-img">🍫</div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Mousse au Chocolat</h3><span class="mcard-price">€5</span></div>
+            <p class="mcard-desc">Légère, aérienne, intensément chocolatée. Faite maison chaque matin.</p>
+            <div class="tag-row"><span class="ctag">Fait maison</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Boissons -->
+    <div class="tab-panel" id="pBoissons" role="tabpanel" aria-labelledby="tBoissons">
+      <div class="menu-grid">
+        <article class="mcard" data-anim="up" data-delay="0">
+          <div class="mcard-img"><img src="images/food-beer.jpg" alt="Kronenbourg 1947 à la pression" loading="lazy" width="400" height="280"/><span class="badge-pill">À la pression</span></div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Kronenbourg 1947</h3><span class="mcard-price">€3.50</span></div>
+            <p class="mcard-desc">La bière emblématique d'Alsace à la pression, servie bien fraîche.</p>
+            <div class="tag-row"><span class="ctag">Pression</span><span class="ctag">Alsace</span></div>
+          </div>
+        </article>
+        <article class="mcard" data-anim="up" data-delay="100">
+          <div class="ph-img">🍷</div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Vin de la Maison</h3><span class="mcard-price">€3–12</span></div>
+            <p class="mcard-desc">Rouge, blanc ou rosé – sélection de vins de France pour accompagner votre repas.</p>
+            <div class="tag-row"><span class="ctag">France</span></div>
+          </div>
+        </article>
+        <article class="mcard" data-anim="up" data-delay="200">
+          <div class="ph-img">☕</div>
+          <div class="mcard-body">
+            <div class="mcard-head"><h3 class="mcard-name">Café & Infusions</h3><span class="mcard-price">€2.50</span></div>
+            <p class="mcard-desc">Café express, allongé ou tisanes pour clore votre repas en douceur.</p>
+            <div class="tag-row"><span class="ctag">Espresso</span><span class="ctag">Tisanes</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="formula" data-anim="flip">
+      <div class="formula-text">
+        <span class="eyebrow">Menu du Jour</span>
+        <h3>Entrée + Plat <em>ou</em> Plat + Dessert</h3>
+        <p>Un repas complet, généreux et savoureux</p>
+      </div>
+      <div class="formula-price">
+        <span>à partir de</span>
+        <strong>€15</strong>
+      </div>
+      <a href="tel:+33625744271" class="btn btn-primary"><span>Réserver une Table</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== GALLERY ======================== -->
+<section class="gallery section" id="gallery" aria-labelledby="galleryTitle">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" data-anim="up">Photos</span>
+      <h2 class="sec-title" data-anim="up" id="galleryTitle">Notre <em>cuisine</em> en images</h2>
+    </div>
+    <div class="gallery-bento">
+      <figure class="g-item" data-delay="0">
+        <img src="images/food-starter.jpg" alt="Assiette charcutière avec cornichons et pain frais" loading="lazy" width="700" height="500"/>
+        <figcaption>Assiette charcutière · Une entrée généreuse du terroir</figcaption>
+      </figure>
+      <figure class="g-item" data-delay="150">
+        <img src="images/food-beef.jpg" alt="Entrecôte sauce oignons avec frites" loading="lazy" width="400" height="320"/>
+        <figcaption>Entrecôte fondante · Notre plat signature</figcaption>
+      </figure>
+      <figure class="g-item" data-delay="300">
+        <img src="images/food-fish.jpg" alt="Dos de cabillaud et pommes de terre" loading="lazy" width="400" height="320"/>
+        <figcaption>Dos de Cabillaud · Frais du jour</figcaption>
+      </figure>
+      <figure class="g-item" data-delay="450">
+        <img src="images/food-beer.jpg" alt="Kronenbourg 1947 bière fraîche" loading="lazy" width="400" height="320"/>
+        <figcaption>Kronenbourg 1947 · À la pression</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== REVIEWS ======================== -->
+<section class="reviews section" id="reviews" aria-labelledby="reviewsTitle">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" data-anim="up">Témoignages</span>
+      <h2 class="sec-title" data-anim="up" id="reviewsTitle">Ce que disent <em>nos clients</em></h2>
+      <div class="reviews-rating" data-anim="up" aria-label="Note 3.9 sur 5 basée sur 292 avis">
+        <span class="stars-row">★★★★☆</span>
+        <span class="rr-num">3.9</span>
+        <span class="rr-text">/ 5 · 292 avis Google</span>
+      </div>
+    </div>
+    <div class="carousel-wrap" role="region" aria-label="Avis clients">
+      <div class="carousel-track" id="carTrack">
+        <article class="rcard" aria-label="Avis Gwenael Vercellotti">
+          <div class="rcard-head"><div class="rav">G</div><div class="rmeta"><strong>Gwenael Vercellotti</strong><span>Décembre 2025</span></div><div class="rstars">★★★★★</div></div>
+          <blockquote>"L'accueil est excellent et chaleureux, la cuisine est très bonne, avec 4 ou 5 plats proposés. Menu à €15 avec entrée et plat ou plat et dessert."</blockquote>
+          <span class="rbadge">Nouveaux propriétaires</span>
+        </article>
+        <article class="rcard" aria-label="Avis Constantin">
+          <div class="rcard-head"><div class="rav">C</div><div class="rmeta"><strong>Constantin</strong><span>Décembre 2025</span></div><div class="rstars">★★★★★</div></div>
+          <blockquote>"Portions très généreuses et très bien présentées ! Repas superbe ! Impossible de commander le dessert tellement les plats sont copieux ! Grand parking !"</blockquote>
+          <span class="rbadge">Très recommandé</span>
+        </article>
+        <article class="rcard" aria-label="Avis Andrew Watson">
+          <div class="rcard-head"><div class="rav">A</div><div class="rmeta"><strong>Andrew Watson</strong><span>Avril 2025</span></div><div class="rstars">★★★★★</div></div>
+          <blockquote>"Very friendly and welcoming owners. The stewed beef was perfectly cooked and melted in your mouth — well seasoned and incredibly fresh."</blockquote>
+          <span class="rbadge">Première visite</span>
+        </article>
+        <article class="rcard" aria-label="Avis Patrick van arnhem">
+          <div class="rcard-head"><div class="rav">P</div><div class="rmeta"><strong>Patrick van arnhem</strong><span>Février 2025</span></div><div class="rstars">★★★★☆</div></div>
+          <blockquote>"Good food, super friendly people, great atmosphere. Open Monday to Saturday 6:00 AM to 10:00 PM."</blockquote>
+          <span class="rbadge">Guide local</span>
+        </article>
+        <article class="rcard" aria-label="Avis Lammert Visser">
+          <div class="rcard-head"><div class="rav">L</div><div class="rmeta"><strong>Lammert Visser</strong><span>Guide local · 712 avis</span></div><div class="rstars">★★★★★</div></div>
+          <blockquote>"Very good restaurant. Excellent service and quality of the dishes, a real pleasure to stop here during our journey through France."</blockquote>
+          <span class="rbadge">Guide local</span>
+        </article>
+      </div>
+    </div>
+    <div class="car-ctrls">
+      <button class="car-btn" id="carPrev" aria-label="Précédent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+      <div class="car-dots" id="carDots" role="tablist" aria-label="Navigation avis"></div>
+      <button class="car-btn" id="carNext" aria-label="Suivant"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="rev-cta" data-anim="up">
+      <a href="https://g.co/kgs/auberge-belle-etoile" target="_blank" rel="noopener" class="btn btn-outline">
+        Laisser un avis Google
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== INFO ======================== -->
+<section class="info section" id="info" aria-labelledby="infoTitle">
+  <div class="container">
+    <div class="info-grid">
+      <div data-anim="up">
+        <div class="line-reveal" id="lineReveal2"></div>
+        <span class="eyebrow">Horaires</span>
+        <h2 class="sec-title" id="infoTitle">Quand nous <em>visiter</em></h2>
+        <div class="hours-tbl" role="table" aria-label="Horaires d'ouverture">
+          <div class="h-row" role="row"><span>Lundi – Samedi</span><span class="open-clr">06:00 – 22:00</span></div>
+          <div class="h-row closed" role="row"><span>Dimanche</span><span class="closed-clr">Fermé</span></div>
+        </div>
+        <p class="h-note"><span>ℹ️</span> Service continu · Cuisine jusqu'à 21h30</p>
+        <div class="status-badge" id="statusBadge" aria-live="polite"></div>
+      </div>
+      <div class="info-cards" data-anim="right">
+        <div class="icard"><span class="ic-icon">📍</span><div><strong>Adresse</strong><address>10 La Belle Étoile<br>10170 Mesgrigny, France</address></div></div>
+        <div class="icard"><span class="ic-icon">📞</span><div><strong>Téléphone</strong><a href="tel:+33625744271">+33 6 25 74 42 71</a></div></div>
+        <div class="icard"><span class="ic-icon">🚗</span><div><strong>Parking</strong><p>Grand parking gratuit · Poids lourds bienvenus</p></div></div>
+        <div class="icard"><span class="ic-icon">💶</span><div><strong>Prix moyen</strong><p>€20–30 par personne · Menu €15</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CONTACT ======================== -->
+<section class="contact section" id="contact" aria-labelledby="contactTitle">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" data-anim="up">Nous Trouver</span>
+      <h2 class="sec-title" data-anim="up" id="contactTitle">Venez nous <em>rendre visite</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="cmap" data-anim="up">
+        <iframe title="Localisation Auberge de La Belle Étoile" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2644.5!2d4.13!3d48.36!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ea8c9c49c3a2b9%3A0x0!2sMessgrigny!5e0!3m2!1sfr!2sfr!4v1" width="100%" height="400" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="cinfo" data-anim="right">
+        <h3>Réservez votre table</h3>
+        <p>Pour les groupes ou pour garantir votre place, n'hésitez pas à nous appeler directement.</p>
+        <a href="tel:+33625744271" class="btn btn-primary phone-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.26 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.15a16 16 0 0 0 5.94 5.94l1.41-1.41a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+33 6 25 74 42 71</span>
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=10+La+Belle+Etoile,+10170+Mesgrigny" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;justify-content:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          <span>Itinéraire</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      <div>
+        <div class="fl-logo"><span class="fl-star">★</span><span>Auberge de La Belle Étoile</span></div>
+        <p class="fl-tag">Une cuisine généreuse au cœur de la Champagne</p>
+        <address class="fl-addr">10 La Belle Étoile · 10170 Mesgrigny, France</address>
+      </div>
+      <nav class="footer-col" aria-label="Navigation pied de page">
+        <h4>Navigation</h4>
+        <ul role="list">
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Galerie</a></li>
+          <li><a href="#reviews">Avis</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul role="list">
+          <li><a href="tel:+33625744271">+33 6 25 74 42 71</a></li>
+          <li>Lun – Sam · 6h – 22h</li>
+          <li>Dimanche fermé</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <div class="container footer-bot-in">
+      <p>© 2025 Auberge de La Belle Étoile. Tous droits réservés.</p>
+      <p>10170 Mesgrigny · Aube · France</p>
+    </div>
+  </div>
+  <button class="btt" id="btt" aria-label="Retour en haut">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auberge-belle-etoile.fr/sitemap.xml
